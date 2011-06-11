@@ -1,0 +1,14 @@
+Simple IRC idler I wrote to learn more about Assembly language programming.
+
+Requires basically everything to be hard-coded in (including port and IP).
+It basically just connects to a server, joins a channel and responds to PINGs.
+It prints out anything it receives as is, and doesn't actually *do* anything.
+The strings.s also includes a basic implementation of itoa() in ASM, but I gave up long before needing it :p.
+
+Assembles with GAS on an x86_64 processor on Linux, and nothing else.
+
+TO build and run it (should you for some reason want to):
+as -o socket.o socket.s
+as -o strings.o strings.s
+ld -o socket socket.o strings.o
+./socket
